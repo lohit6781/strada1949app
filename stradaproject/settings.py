@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-)d2huvd3!=_13iq7$_@kj61kr3x)^^b56l)dfc6s=_m*@+2m!%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['strada1949.herokuapp.com', '127.0.0.1', 'strada1949.studio']
 
 
 # Application definition
