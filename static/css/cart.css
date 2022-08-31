@@ -1,0 +1,311 @@
+.heading {
+    font-size: 28px;
+    padding: 10px 10px;
+}
+
+headingLight {
+    color: gray;
+}
+
+.itemWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.item {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+    height: 15vh;
+    border-radius: 15px;
+    box-sizing: border-box;
+    padding: 10px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.counter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    padding: 10px 15px;
+    border-radius: 10px;
+    width: 15%;
+}
+
+.delBtn {
+    background-color: transparent;
+    border: none;
+}
+
+.sizeShow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border-radius: 50%;
+    font-size: 10px;
+    background-color: white;
+    color: black;
+    height: 15px !important;
+    width: 15px !important;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.productDetails {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.productName {
+    color: darkgray;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.productPrice {
+    color: black;
+}
+
+.proceedBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.10);
+    height: 62px;
+    width: 90%;
+    padding: 20px;
+    border: none;
+    border-radius: 15px;
+    bottom: 20px;
+    margin-left: 5%;
+    z-index: 9;
+}
+
+.shippingForm form .proceedBtn {
+    margin-top: 15px;
+}
+
+.noBag {
+    color: darkgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10em 0em;
+}
+
+.proceedLink {
+    color: white;
+    background-color: black;
+    padding: 20px 0px;
+    margin: 0em 15px 2em 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+}
+
+.billerWrapper {
+    background-color: #EEF0F4;
+    color: white;
+    box-sizing: border-box;
+    margin: 0em 15px 2em 15px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.biller {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 20px 20px 20px;
+    box-sizing: border-box;
+}
+
+.billerRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.billerName {
+    width: 300px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 50%;
+    color: #767676;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 12px;
+}
+
+.billerPrice {
+    font-size: 18px;
+    color: #767676;
+}
+
+.billerTotal {
+    color: black;
+}
+
+.deliveryCharges {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.deliveryCharges .billerPrice:nth-child(1) {
+    margin: 0px 10px;
+}
+
+.checkoutBtn {
+    background-color: black;
+    box-shadow: none;
+    color: white;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 20px;
+    margin: 0px;
+}
+
+.collectionCarousel {
+    display: flex;
+    flex-direction: row;
+    overflow: scroll;
+}
+
+.collectionWrapper {
+    border-radius: 5px;
+    min-width: 80vw;
+    margin: 0px 10px;
+}
+
+.collectionTop {
+    font-family: 'PT Mono', monospace;
+    font-size: 80px;
+    opacity: .75;
+}
+
+.collectionBottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+    width: 100%;
+    padding: 20px 20px;
+    box-sizing: border-box;
+    color: white;
+    border-radius: 5px;
+}
+
+.collectionName {
+    color: white;
+}
+
+.viewProductBtn {
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 12px;
+    min-width: max-content;
+}
+
+.shippingDetailsWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: min-content;
+    width: 100vw;
+    padding: 0vh 0vh 5vh 0vh;
+    background-color: white;
+    display: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: 500ms ease;
+}
+
+.shippingForm {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0px 15px;
+}
+
+.shippingForm form {
+    width: 100%;
+}
+
+.shippingInput {
+    width: 100%;
+    background-color: #EEF0F4;
+    border: none;
+    border-radius: 50px;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    margin: 10px 0px;
+    font-size: 12px;
+}
+
+.shippingInput::placeholder {
+    font-size: 12px;
+}
+
+.formDivide {
+    display: flex;
+    flex: 1fr 1fr;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.formDivide .shippingInput:first-child {
+    margin-right: 5px;
+}
+
+.formDivide .shippingInput:last-child {
+    margin-left: 5px;
+}
+
+.phoneCode {
+    width: max-content;
+    background-color: #EEF0F4;
+    border: none;
+    border-radius: 50px;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    margin: 10px 0px;
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+.countryInp {
+    width: 100%;
+}
+
+.selectInp {
+    padding: 0px;
+    margin: 0px;
+}

@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock styles %}
+
+{% block title %}
+<title>STRADA 1949 | Home</title>
+{% endblock title %}
+
+{% block body %}
+
+<div class="hero">
+    <p class="shopNowHead">Debut Collection</p>
+    <p class="shopNowPara">Feel the authentic peace with STRADA 1949's Debut Collection</p>
+    <a href="/collection/HZRD-001" class="shopNowBtn">Shop Now
+        <svg xmlns="http://www.w3.org/2000/svg" width="22.082" height="7.378" viewBox="0 0 22.082 7.378">
+            <g id="Group_19" data-name="Group 19" transform="translate(-3081 -1286.793)">
+                <line id="Line_7" data-name="Line 7" x2="20.448" transform="translate(3081.5 1290.482)" fill="none"
+                    stroke="#000" stroke-linecap="round" stroke-width="1" />
+                <line id="Line_8" data-name="Line 8" x2="2.982" y2="2.982" transform="translate(3099.392 1287.5)"
+                    fill="none" stroke="#000" stroke-linecap="round" stroke-width="1" />
+                <line id="Line_9" data-name="Line 9" y1="2.982" x2="2.982" transform="translate(3099.392 1290.482)"
+                    fill="none" stroke="#000" stroke-linecap="round" stroke-width="1" />
+            </g>
+        </svg>
+    </a>
+</div>
+
+<p class="heading">New <headingLight>Arrivals</headingLight></p>
+
+<div class="cardView">
+    {% for product in products %}
+    <div class="cardWrapper">
+        <div class="card" style="background-image: url('{{product.img1.url}}');">
+            <div class="cardBlur">
+                <div class="cardDetails">
+                    <p class="cardPara">{{product.name}}</p>
+                    <h4 class="price">Rs. {{product.price}}</h4>
+                </div>
+                <a href="/product/{{product.product_id}}" class="viewProductBtn">View Product</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<p class="heading">Browse <headingLight>Collections</headingLight></p>
+
+<div class="collectionCarousel">
+
+    {% for collection in collections %}
+
+    <div class="collectionWrapper" style="background-color: {{collection.collection_color}};">
+        <p class="collectionTop">{{collection.collection_name}} <br> {{collection.collection_number}}</p>
+        <div class="collectionBottom">
+            <p class="collectionName">{{collection.collection_name}}{{collection.collection_number}}</p>
+            <a href="/collection/{{collection.collection_slug}}" class="viewProductBtn">Browse</a>
+        </div>
+    </div>
+
+    {% endfor %}
+
+</div>
+
+{% endblock body %}

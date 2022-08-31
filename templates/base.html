@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap&family=PT+Mono&display=swap"
+        rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/headerImgs/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/headerImgs/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/headerImgs/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'img/headerImgs/site.webmanifest' %}">
+    <link rel="mask-icon" href="{% static 'img/headerImgs/safari-pinned-tab.svg' %}" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block styles %}
+    {% endblock styles %}
+    {% block title %}
+    {% endblock title %}
+</head>
+
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="menuBtn" id="menuBtn">
+            <div class="menuBtnLine1" id="menuBtnLine1"></div>
+            <div class="menuBtnLine2" id="menuBtnLine2"></div>
+        </div>
+        <a href="/home">
+            <img class="navLogo" src="{% static 'img/Logo.png' %}" alt="STRADA 1949">
+        </a>
+        <a href="/cart">
+            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="20.895" viewBox="0 0 23 20.895">
+                <g id="Group_13" data-name="Group 13" transform="translate(-3502 -376.105)">
+                    <g id="Path_20" data-name="Path 20" transform="translate(3502 376.105)" fill="none">
+                        <path
+                            d="M6,0H17a4.788,4.788,0,0,1,5,4.542l1,11.81A4.788,4.788,0,0,1,18,20.9H5a4.788,4.788,0,0,1-5-4.542L1,4.542A4.788,4.788,0,0,1,6,0Z"
+                            stroke="none" />
+                        <path
+                            d="M 6 2.000001907348633 C 4.345790863037109 2.000001907348633 3 3.140531539916992 3 4.542430877685547 L 3 4.626951217651367 L 2.001152038574219 16.42370223999023 C 2.045597076416016 17.79296493530273 3.373756408691406 18.89520072937012 5 18.89520072937012 L 18 18.89520072937012 C 19.62624359130859 18.89520072937012 20.95440292358398 17.79296493530273 20.99884796142578 16.42370223999023 L 20 4.626951217651367 L 20 4.542430877685547 C 20 3.140531539916992 18.65420913696289 2.000001907348633 17 2.000001907348633 L 6 2.000001907348633 M 6 1.9073486328125e-06 L 17 1.9073486328125e-06 C 19.76141929626465 1.9073486328125e-06 22 2.033721923828125 22 4.542430877685547 L 23 16.3527717590332 C 23 18.86148071289062 20.76141929626465 20.89520072937012 18 20.89520072937012 L 5 20.89520072937012 C 2.238580703735352 20.89520072937012 0 18.86148071289062 0 16.3527717590332 L 1 4.542430877685547 C 1 2.033721923828125 3.238580703735352 1.9073486328125e-06 6 1.9073486328125e-06 Z"
+                            stroke="none" fill="#000" />
+                    </g>
+                    <path id="Path_22" data-name="Path 22"
+                        d="M3508.463,383a4.348,4.348,0,0,0,4.386,4.359A4.261,4.261,0,0,0,3517.1,383"
+                        transform="translate(0.72 -1.792)" fill="none" stroke="#000" stroke-linecap="round"
+                        stroke-width="2" />
+                </g>
+            </svg>
+        </a>
+    </nav>
+
+    <div class="menu" id="menu">
+        <div class="menuLeft">
+            <p class="menuLink" id="menuLink1">Shop Men's</p>
+            <p class="menuLink" id="menuLink2">Shop Women's</p>
+            <p class="menuLink" id="menuLink3">Overcoats &amp; Jackets</p>
+            <p class="menuLink" id="menuLink4">Accessories</p>
+        </div>
+
+        <div class="menuRight">
+            <a href="/products/men" class="goToBagBtn" style="background-image: url('{% static 'img/clothing_men.jpg' %}');"
+                id="menuImg1">
+                <p>Shop <br>
+                    <pBagBottom>Men's</pBagBottom>
+                </p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="135.114" height="42.881" viewBox="0 0 135.114 42.881">
+                    <g id="Group_18" data-name="Group 18" transform="translate(-3079.5 -1284.672)">
+                        <line id="Line_7" data-name="Line 7" x2="127.627" transform="translate(3081.5 1306.112)"
+                            fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3" />
+                        <line id="Line_8" data-name="Line 8" x2="18.612" y2="18.612"
+                            transform="translate(3193.173 1287.5)" fill="none" stroke="#fff" stroke-linecap="round"
+                            stroke-width="3" />
+                        <line id="Line_9" data-name="Line 9" y1="18.612" x2="18.612"
+                            transform="translate(3193.173 1306.112)" fill="none" stroke="#fff" stroke-linecap="round"
+                            stroke-width="3" />
+                    </g>
+                </svg>
+            </a>
+
+            <a href="/products/women" class="goToBagBtn"
+                style="background-image: url('{% static 'img/clothing_women.jpg' %}');" id="menuImg2">
+                <p>Shop <br>
+                    <pBagBottom>Women's</pBagBottom>
+                </p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="135.114" height="42.881" viewBox="0 0 135.114 42.881">
+                    <g id="Group_18" data-name="Group 18" transform="translate(-3079.5 -1284.672)">
+                        <line id="Line_7" data-name="Line 7" x2="127.627" transform="translate(3081.5 1306.112)"
+                            fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3" />
+                        <line id="Line_8" data-name="Line 8" x2="18.612" y2="18.612"
+                            transform="translate(3193.173 1287.5)" fill="none" stroke="#fff" stroke-linecap="round"
+                            stroke-width="3" />
+                        <line id="Line_9" data-name="Line 9" y1="18.612" x2="18.612"
+                            transform="translate(3193.173 1306.112)" fill="none" stroke="#fff" stroke-linecap="round"
+                            stroke-width="3" />
+                    </g>
+                </svg>
+            </a>
+
+            <a href="/products/overcoats-jackets" class="goToBagBtn"
+                style="background-image: url('{% static 'img/clothing_jackets.jpg' %}');" id="menuImg3">
+                <p>Overcoats &amp; <br>
+                    <pBagBottom>Jackets</pBagBottom>
+                </p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="135.114" height="42.881" viewBox="0 0 135.114 42.881">
+                    <g id="Group_18" data-name="Group 18" transform="translate(-3079.5 -1284.672)">
+                        <line id="Line_7" data-name="Line 7" x2="127.627" transform="translate(3081.5 1306.112)"
+                            fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3" />
+                        <line id="Line_8" data-name="Line 8" x2="18.612" y2="18.612"
+                            transform="translate(3193.173 1287.5)" fill="none" stroke="#fff" stroke-linecap="round"
+                            stroke-width="3" />
+                        <line id="Line_9" data-name="Line 9" y1="18.612" x2="18.612"
+                            transform="translate(3193.173 1306.112)" fill="none" stroke="#fff" stroke-linecap="round"
+                            stroke-width="3" />
+                    </g>
+                </svg>
+            </a>
+
+            <a href="/products/accessories" class="goToBagBtn"
+                style="background-image: url('{% static 'img/clothing_accessories.jpg' %}');" id="menuImg4">
+                <p>Shop <br>
+                    <pBagBottom>Accessories</pBagBottom>
+                </p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="135.114" height="42.881" viewBox="0 0 135.114 42.881">
+                    <g id="Group_18" data-name="Group 18" transform="translate(-3079.5 -1284.672)">
+                        <line id="Line_7" data-name="Line 7" x2="127.627" transform="translate(3081.5 1306.112)"
+                            fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3" />
+                        <line id="Line_8" data-name="Line 8" x2="18.612" y2="18.612"
+                            transform="translate(3193.173 1287.5)" fill="none" stroke="#fff" stroke-linecap="round"
+                            stroke-width="3" />
+                        <line id="Line_9" data-name="Line 9" y1="18.612" x2="18.612"
+                            transform="translate(3193.173 1306.112)" fill="none" stroke="#fff" stroke-linecap="round"
+                            stroke-width="3" />
+                    </g>
+                </svg>
+            </a>
+        </div>
+
+    </div>
+
+    <div class="minContainer">
+        {% block body %}
+
+        {% endblock body %}
+    </div>
+
+    <div class="footer" id="footer">
+        <div>
+            <img class="footerLogo" src="{% static 'img/Logo.png' %}" alt="STRADA 1949">
+        </div>
+        <div class="footerSeparater"></div>
+        <div class="footerMiddle">
+            <div class="footerLinkWrapper">
+                <a href="/home" class="footerLink">Home</a>
+                <a href="/collection/HZRD-001" class="footerLink">Collections</a>
+            </div>
+            <div class="footerLinkWrapper">
+                <a href="/terms-of-service" class="footerLink">Terms of Service</a>
+                <a href="#" class="footerLink">Sitemap</a>
+            </div>
+            <div class="footerLinkWrapper">
+                <a href="mailto:help@strada1949.com" class="footerLink">Contact</a>
+                <a href="#" class="footerLink">Address</a>
+            </div>
+        </div>
+        <div class="footerSeparater"></div>
+        <div>
+            <p class="footerText">STRADA 1949 Clothing &copy; 2022 | All Rights Reserved</p>
+        </div>
+    </div>
+
+    <script src="{% static 'js/base.js' %}"></script>
+</body>
+
+</html>

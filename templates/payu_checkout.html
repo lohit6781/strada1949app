@@ -1,0 +1,24 @@
+<html>
+
+<head>
+    <title>Loading...</title>
+</head>
+
+<body onload="document.payuForm.submit()">
+    <form action='https://test.payu.in/_payment' method='POST' name="payuForm">
+        <input type="hidden" name="key" value="JP***g" />
+        <input type="hidden" name="txnid" value="{{posted.txnid}}" />
+        <input type="hidden" name="productinfo" value="{{posted.productinfo}}" />
+        <input type="hidden" name="amount" value="{{posted.amount}}" />
+        <input type="hidden" name="email" value="{{posted.email}}" />
+        <input type="hidden" name="firstname" value="{{posted.firstname}}" />
+        <input type="hidden" name="lastname" value="{{posted.lastname}}" />
+        <input type="hidden" name="surl" value="https://google.com" />
+        <input type="hidden" name="furl" value="https://yahoo.in" />
+        <input type="hidden" name="phone" value="{{posted.phone}}" />
+        <input type="hidden" name="hash" value="b08a6309952d4ca989b0d1f61d594c171b3b243264541d3787889f469760cc5f9910345315497c7f463b5defcda0d38aaf3c5511dd7d8256012445ccec1eff14" />
+        <input type="submit" value="submit">
+    </form>
+</body>
+
+</html>

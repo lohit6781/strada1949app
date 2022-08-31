@@ -1,0 +1,29 @@
+.listView {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0em 0em 2em 0em;
+}
+
+.cardWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 40vh;
+    width: 50vw;
+}
+
+.cardBlur {
+    padding: 10px 10px;
+}

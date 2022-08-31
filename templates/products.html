@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+<link rel="stylesheet" href="{% static 'css/products.css' %}">
+{% endblock styles %}
+
+{% block title %}
+<title>STRADA 1949 | Products</title>
+{% endblock title %}
+
+{% block body %}
+
+<p class="heading">Shop <headingLight>{{category_var}}</headingLight></p>
+
+<div class="listView">
+    {% for product in products %}
+    <a href="/product/{{product.product_id}}">
+        <div class="cardWrapper">
+            <div class="card" style="background-image: url('{{product.img1.url}}');">
+                <div class="cardBlur">
+                    <div class="cardDetails">
+                        <p class="cardPara">{{product.name}}</p>
+                        <h4 class="price">Rs. {{product.price}}</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+
+<p class="col_end">You've reached the end of our collection... :(</p>
+
+<p class="heading">Browse <headingLight>Collections</headingLight></p>
+
+<div class="collectionCarousel">
+    {% for collection in collections %}
+
+    <div class="collectionWrapper" style="background-color: {{collection.collection_color}};">
+        <p class="collectionTop">{{collection.collection_name}} <br> {{collection.collection_number}}</p>
+        <div class="collectionBottom">
+            <p class="collectionName">{{collection.collection_name}}{{collection.collection_number}}</p>
+            <a href="/collection/{{collection.collection_slug}}" class="viewProductBtn">Browse</a>
+        </div>
+    </div>
+
+    {% endfor %}
+</div>
+
+<script src="{% static 'js/base.js' %}"></script>
+
+{% endblock body %}

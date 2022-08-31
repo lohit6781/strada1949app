@@ -1,0 +1,49 @@
+.errorWrapper {
+    box-sizing: border-box;
+    padding: 15px 15px;
+}
+
+.errorHead {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.errorHeading {
+    font-size: 70px;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.errorMid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+}
+
+.errorPara {
+    color: gray;
+}
+
+.errorMid:nth-child(3) .errorPara {
+    font-size: 10px;
+}
+
+.errorBottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0px;
+}
+
+.goShoppingBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 40px;
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+}

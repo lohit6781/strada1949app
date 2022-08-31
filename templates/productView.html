@@ -1,0 +1,230 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/productView.css' %}">
+{% endblock styles %}
+
+{% block title %}
+<title>STRADA 1949 | Product Name</title>
+{% endblock title %}
+
+{% block body %}
+
+{% for product in products %}
+
+<div class="productPage">
+    <div class="productPageHeader">
+        <p class="productName">{{product.name}}</p>
+        <p class="productPrice">Rs. {{product.price}}</p>
+    </div>
+    <div class="productDisplay">
+        <div class="stylePick">
+            <form action="#" method="POST" id="sizeSelectForm">
+                {% csrf_token %}
+                <input type="hidden" value="{{product.product_id}}" name="product">
+                <label>
+                    <input type="radio" name="size" value="S" required>
+                    <div class="sizeSelectBtn">S</div>
+                </label>
+                <label>
+                    <input type="radio" name="size" value="M" required>
+                    <div class="sizeSelectBtn">M</div>
+                </label>
+                <label>
+                    <input type="radio" name="size" value="L" required>
+                    <div class="sizeSelectBtn">L</div>
+                </label>
+                <label>
+                    <input type="radio" name="size" value="XL" required>
+                    <div class="sizeSelectBtn">XL</div>
+                </label>
+                <label>
+                    <input type="radio" name="size" value="2XL" required>
+                    <div class="sizeSelectBtn">2XL</div>
+                </label>
+                <label>
+                    <input type="radio" name="size" value="3XL" required>
+                    <div class="sizeSelectBtn">3XL</div>
+                </label>
+            </form>
+        </div>
+        <div class="imgHolder" id="imgHolder">
+            <div class="cardImg" id="cardImg">
+                <div class="cardBlur">
+                    <div class="counterBlock"></div>
+                    <div class="counterBlock"></div>
+                    <div class="counterBlock"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="btnClass">
+        <button type="submit" class="addToBagBtn" form="sizeSelectForm">
+            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="20.895" viewBox="0 0 23 20.895">
+                <g id="Group_14" data-name="Group 14" transform="translate(-3502 -376.105)">
+                    <g id="Path_20" data-name="Path 20" transform="translate(3502 376.105)" fill="none">
+                        <path
+                            d="M6,0H17a4.788,4.788,0,0,1,5,4.542l1,11.81A4.788,4.788,0,0,1,18,20.9H5a4.788,4.788,0,0,1-5-4.542L1,4.542A4.788,4.788,0,0,1,6,0Z"
+                            stroke="none" />
+                        <path
+                            d="M 6 2.000001907348633 C 4.345790863037109 2.000001907348633 3 3.140531539916992 3 4.542430877685547 L 3 4.626951217651367 L 2.001152038574219 16.42370223999023 C 2.045597076416016 17.79296493530273 3.373756408691406 18.89520072937012 5 18.89520072937012 L 18 18.89520072937012 C 19.62624359130859 18.89520072937012 20.95440292358398 17.79296493530273 20.99884796142578 16.42370223999023 L 20 4.626951217651367 L 20 4.542430877685547 C 20 3.140531539916992 18.65420913696289 2.000001907348633 17 2.000001907348633 L 6 2.000001907348633 M 6 1.9073486328125e-06 L 17 1.9073486328125e-06 C 19.76141929626465 1.9073486328125e-06 22 2.033721923828125 22 4.542430877685547 L 23 16.3527717590332 C 23 18.86148071289062 20.76141929626465 20.89520072937012 18 20.89520072937012 L 5 20.89520072937012 C 2.238580703735352 20.89520072937012 0 18.86148071289062 0 16.3527717590332 L 1 4.542430877685547 C 1 2.033721923828125 3.238580703735352 1.9073486328125e-06 6 1.9073486328125e-06 Z"
+                            stroke="none" fill="#fff" />
+                    </g>
+                    <path id="Path_22" data-name="Path 22"
+                        d="M3508.463,383a4.348,4.348,0,0,0,4.386,4.359A4.261,4.261,0,0,0,3517.1,383"
+                        transform="translate(0.72 -1.792)" fill="none" stroke="#fff" stroke-linecap="round"
+                        stroke-width="2" />
+                </g>
+            </svg>
+        </button>
+    <!-- <form action="/home" method="POST">
+        {% csrf_token %}
+        <input type="hidden" value="productID">
+        <button type="submit" class="likeBtn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="27.883" height="22.898" viewBox="0 0 25.883 22.898">
+                <path id="Icon_awesome-heart" data-name="Icon awesome-heart"
+                    d="M21.561,3.676a6.378,6.378,0,0,0-8.7.634l-.919.947-.919-.947a6.378,6.378,0,0,0-8.7-.634,6.7,6.7,0,0,0-.462,9.7l9.025,9.319a1.462,1.462,0,0,0,2.113,0l9.025-9.319a6.693,6.693,0,0,0-.457-9.7Z"
+                    transform="translate(1.002 -1.245)" fill="none" stroke="#000" stroke-width="2" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="25.883" height="22.898" viewBox="0 0 25.883 22.898">
+                <path id="Icon_awesome-heart" data-name="Icon awesome-heart" d="M21.561,3.676a6.378,6.378,0,0,0-8.7.634l-.919.947-.919-.947a6.378,6.378,0,0,0-8.7-.634,6.7,6.7,0,0,0-.462,9.7l9.025,9.319a1.462,1.462,0,0,0,2.113,0l9.025-9.319a6.693,6.693,0,0,0-.457-9.7Z" transform="translate(1.002 -1.245)" fill="#ff3131" stroke="#ff3131" stroke-width="2"/>
+            </svg>
+        </button>
+    </form> -->
+</div>
+
+<p class="heading">Product <headingLight>Description</headingLight></p>
+
+<p class="productDescription">{{product.description}}</p>
+
+{% endfor %}
+
+<p class="heading">Product <headingLight>Features</headingLight></p>
+
+<div class="productDetailsWrapper">
+    <div class="detailWrapper">
+        <div class="detailHeader">
+        <img class="detailImg" src="data:image/png;base64,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">
+        <p class="detailHeading">100% Cotton</p>
+        </div>
+        <p class="detailPara">All our products are made out of some expensive cotton for extreme comfort and longer garment life</p>
+    </div>
+
+    <div class="detailWrapper">
+        <div class="detailHeader">
+        <img class="detailImg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAABmJLR0QA/wD/AP+gvaeTAAAE8ElEQVR4nO2cTWhdVRDHf9ZiXtu0toIxD6vSjRXECkZX2pqWirjws0ZEKaKIuGq1bl2JCxeCVLRWUISAFMGVsYKWWlNT3TSVRCipYC3oJlRNaj9Ik5DnYlJ43t7vc+ae++r8YDb35WRm/rnv3nPOzAkYhmEYhmEYhmEYhmEYhmH8r7kqdAAJrAA2AncB6xftemDN4mcA54Ep4DQwAZwAjgEji58ZCTSBXYhQs0CrpM0C3wOvAr2VZlBzNgP7gXnKi5tk88CXQH9l2dSQrcAR/IubZCPAlkoyqwlNYJDqBI7aEHCTepaBeRo4QziRL9k0MKCcaxAawF7CCxy194EuxbwrpRv4hvCiJtkh4Fq17CuiB/iJ8GJm2bHFWDuSVcAo4UXMa+PAahUlFGkgX8nQ4hW1g3TYM/tDwotW1t5T0EOFp9ARIAkNX884aqDOjejNk5PQ8DWNLKxqy2fofaWT0PL3qZMSimxFL+kQQreo6WbUD+glfCHF73lFv4cd9FBhMzqJHgIeBZal+G4AjwDfKsWwqbQqCuzHb3JnkNlLUZ5Eqi4+YxkqEYcKTWAOf4mdBfoc4tmAX7HnqMny/DX83kHPZ/hbg9QP03jcc0w7M/xVwgj+EpoAlsT46AF2A3+3/ew/wEfALRXENVxMEv9041ZIjdqbMT66gOMpY34Hbo4Z97LHuGaA5QW18cqDMUG52LYYHw/lGPdJzLh7PMf2QEFt/sNSl8G4vbTimIq5Np9j3DZgbeRa2pSwDH3AgbKDXYVe7zg+yqqYa4eRavm9KeNWIitTTZxyjXvxVOY8hg0x1y4iIu4ExpCvcQh851qI3/D7HBwju02tiVSw30bu9gueY0iyk8Xl8cefCUG52HMFY2ggWwB7ke1NLaFPF4zLKxcTgnKxc5R/3l6HVEgWFOKaKRmTFzSEbiFz87eIfznm4QX8ix1UaI1HR7udBT5GNouylt1RPvAcS9BHh++XYZb9CuwDXgFuz4htLX7v6qAvwx8TgqrKTgIvkTxNHffo60hZkUgJMC8nHMe7sg5pbXgj4fNTHn055eq6MvzFcXw7k8DPkWsN4L4cY18EXo+5nmf5nhenXF2FHnUc385xLt+4WQr8AdyQMTapppg1rghHPf6uwqzA3xTvL+L/8I9l+FgAtseMa+Bv1Rh8mxTkYI6vF87DCT7uQDb5J9t+9hxSq7w/YcyzHuP6roAeauzCX0LjZDcZLiN7Tt2NPFN9xbUjw18l9OK3ODsIXO0QzzXA5x7jmaUmxVmQI2a+EmsBXyF9fEVZh//+ji9KxKFGP36TayHL73eAO0nfOl0C3A3sQadraWNpVZTwWXWO2mSKX839luDV7zi2oJdwK8Wvlr8FatYO1s4+rhyhB52UUKaJXpUjCQ1fU3TAgf0BOl/ouP6SWrIHva+0tu1W0EONLuQoWWjRitoBZMHTUayksw50jtHBR5V7kOO/oUXMsqPUaJldlm7ga8KLmWQHKV9trx1dSL9FaFGj9i4d+EzOwwC63UR5bQp4QjnX4PQiqy6NbqI8NsTlLb5XNP1Ik2JVAg9T472LKtiE3GU+iweXbA7ZT67dVmdIepAe6GGkGFpW3BmkxreDGk3Z6vovM5cjHf59wK3AbUjrwGpkughSnJ1G9qonkBrhKNJRlHak2TAMwzAMwzAMwzAMwzAMw6iefwGprnE2420XKAAAAABJRU5ErkJggg==">
+        <p class="detailHeading">No Hidden Charges</p>
+        </div>
+        <p class="detailPara">We do not serve any hidden or extra charges so you're always paying the amount you see on your screen</p>
+    </div>
+
+    <div class="detailWrapper">
+        <div class="detailHeader">
+        <img class="detailImg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABmJLR0QA/wD/AP+gvaeTAAAEhklEQVR4nO2dzW9VRRiHn4uCiR9QTEATE7GXQHCFVlu/gbhxhxICJER2WAMxGN0aFRO3/hdioqxAMSGygSjBSIAFSQNNUMpHQ2yhFZBCiXUxrUJ7e96Ze+bM3N73fZI3Xcxp5nfnd898z1yIy3JgLzA6GXuBeuQ8DE+6gCFgYlr8iZmSnC5gmJlmTMWefNL08RyN34x7YyCbOmX4mDEBnM8lUBNSNWVVVkJCzBgCOvPI1IFvNTUBXAO688jUQYgZI5gZlRJqRk8emTowM1qIUDNeyiNTB2ZGCxFixijwch6ZOggx4wawJo9MHZgZLUSoGWvzyNRBqBnr8shsb2qTf7uAn4DHM2rJzRDQB5ybjH7gGPB7aiHL8X8zNMYl4FtgG7CoyTIO4puEH26uxxiwH3gbmNdMYfsw0AIfdC5GP/AB8HB4kRdjhpSLi0Av8EBowc/Gnhb4UO0QJ4AXAsu+IXWsUY8Vd4DPgQeDHGhAyJKshRzHgKeCHGhAiCl/Aa+VzbBFWAAsxq37rwG2A18BvwJ3ad6Uy0SY/dZqymwsAjYB+3DVUagpt4B3yooINeWVshnOEZbg2ofQqv0OsLFs5iGmjKLHFIDHgE+Bm/ibMk4GU7QtUHUCPxBWfZUuI1vClenFTan4lFGUkwAhb4rWHScvAoP4ldFxYH7ZDG0bkMwzwBn8yujLGBmGvCnXcN8abTyJm3SUyucu8GqMDG0rqUwnblAolc9pIkyxQNibcnXyeW1049fQ98bKMPQ4gsYzhruQy+YKblwTBTuwU0wNOIBcNh/HzNS3TdF6xnAZbodOUdlcIEI3+F583hSthgB8hvyF3Ro7UzsWPTsLcZ2bIkMOVpFx0cUB2s8Y7qbYkHFgaRUZ17n/ao3v0NnDms4S5PWUndnUKWU/xYbsyydNJ5uRB9GVbb4zZtKBvEa/2hxJxwhwUnim2wxJy89C+gozJC19QroZkpgzQnrdDEmLNIXUYYak5bqQ/mgSFcZ/PERxt/e2vSEthhmSFml18LoZkhYzpMV4WkgfMUPSskpIP2eGpEUypN8MScsbQvrZJCoMwHP6PZs6hWyh2IxhYJ5VWel4V0g/DPyTQojhdpRImxx2ZFOnkC+QtwE9kU2dMnw2yh2YetjakOr5CHcxQRFfpxBiuM3W0vHpASJvtjYaUwN+RN5ovSuXQG18iGzGFeCRXAI10QPcRjbkvVwCNVHH78z6CaxTVTkhx6I13Q+ThU78Lw7YnUmjGnrwv1rjFyKdTzdmUsP1pnwa8AnchQLSMq7RJHX8xhlTcQOd141UzkJcG/A3/maMA+tziG1nluKMkCYKp8cYsCGD3rZkMW6l73uauwTzJvBWSIY1+ZG2ZwFuk3MHrsFdCTwLvA48T/NXiF/A3bP4W+g/Tnc1d3o7xBHcILEpzJB4MQZ8QslxhhkSJ47iqrrSmCHl4g8i/1yFGdJc9AHvU8FqnxniH7dwd7m8SUU9VJvkkrkEHMLdVXIQN7aoDDPkf07jNhwMAueBU7hLjwdzijIMwzAMwzAMwzAMIyf/AlbA5g2O8Ea/AAAAAElFTkSuQmCC">
+        <p class="detailHeading">No Return Policy</p>
+        </div>
+        <p class="detailPara">This product does not support return options</p>
+    </div>
+
+    <div class="detailWrapper">
+        <div class="detailHeader">
+        <img class="detailImg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABmJLR0QA/wD/AP+gvaeTAAAFd0lEQVR4nO2dS2hdRRjHf7ktjZBYWi1omlZ0o7ZVhIjufGx8ImqydCXYFhvSB7hw123BjehCfKHgxpURtRtFXLRiFUWTikoxVLGSFluNTQt5NnExufbeOXPvmXPON+dMbr4fDOReznyP+7/3zDlzvpmAoiiKoiiKoiiKoiiKoiiKoiiKoiiKoiiKoiiKoihKFWwBjgCngDlguUPaPDABvARcL/ZpBWYAOEv1H17oNgncJfSZBWMLa0OMevsD2CTyyQWgBrwA3Fh1ICWyHThYdRDtOEXzN+hloLfSiGTpAd6gOceTlUaUgj2A91QbThA205zjTLXhtKYLE6D9XieyKvKsVR2A0owKEhkqSGSoIJGhgkSGChIZKkhkrGVBjgOXKT43dhn4CXgVuEMiMNtBp1LGxOUS8A6wUTLQTqXMGeUfgZulAu1Uyp7mPwfcLhFop2Ln+SvmwVxRtgEjwF8OH78D/UUD7VTsPCXEaOQ64FOHny+B9VkMrVVBQrAOeM/h60gWIyqILOuBjyxfV4DHfA2oIO3pxowRX1PsvuU8ZrwJFuhqI0+e/cD3jr5523E8xhMVxE03MOboV7SljicqiJsDjj4SLXU8UUHcfGMd/y1wWw6/m4HTlq2244kK4mbaOv7WAr7vJVnd03I8UUFkjk/jkMOmczxRQWSOT6ML+MCyuQQ8GdpxrFQtCLjHkyngltCOYyQGQQDuITmefFyG49iIRRCAFx32Hy7DcUzEJMg1mGURjfaPleE4JmISBGC/w8eOMhzHQmyCbAQuWT4Or+WqkzSmrdd3BrD/ifXefSpIa8at1+8jL8rn1ms9ZbXhWUef0G0uT6Crlax51oAvHP1CNxWkDZsoXxQVJIUa5vR1DLjosCPadI1h9TTFpVdZkaGCRIYKEhkqSGSoIJGhgkSGChIZmcrkM3ATMAQ8hKllqm//dA6z+9BnwChwJpB/aVrlcwb4DTiKeQz7p4QzyTv17cC7mG310u5K5zHr8bwKkAXIk2eWfBYw20D1FY1LSpAh4B+PwO32NzBYwK8vWfPMm89F4PEicUkIshdTY5R3DmcJ2J3Tty9Z8iyazyKwL29cRQUZwhQQ23bGMM+Nd2A2ResBdmKKmMcdx18h7C/FN0+pfBbx+6WICrIVuGD1nwH20P4Krob5Fs5afc+T/Rzsi0+e0vn8S/p+lqKCvO0I/v4M/R8gmcSbGWPwxSfPEPm8njWuvIJsdTjfk6F/nX2WjVnC/ErS8gyVzwLtl0Yn4rJLUXyXC49Y/cbId6NZw+wS2mhrOIeddvSSTNxeXhAyn1YD/IB13DQkF6ZMAHd7OB61+u3PEXydg5at0QK2bHqBV0gK8h0rVR4rhMznqOOYAczmBY3HnQC5pVuNyWVlp1AMkk0yn188fY6A3OLGIpsvXyvgX7pJ5mOvxnK1H4ANNUwt0BMkC8M6kQnMPFpsjGE0mG98sxtz3jxBcqAP/RPflcOfb5sDfgYOY765XcAzmPKedlUkkvm4TlmXgK8wp6kNBXz9jz0IHihgy15/Jzmo+xIyH7uGNwj2ZeI4+S4T12E2/Gq0JX3Z60PIfHzntQrRR/JGam8OO8OWjRmq+fcZofJZwNx0loI91TCLmT7w5UHKmzrxIUQ+rwnH2JY+kpNxs5ifaNpk3DDuycUq/7mMdD5TwA0B43UyiHu6+iTmjnUXZqq6d+XvQyTPscsrNp4qOXYXUvkskmGPLGl2U/wB1XOlR92aovksAs+XHrXFIOZxbNbgLwBPVxBvGnnzmQIerSBeJ/2YgdHn/yDOAW9R4hVIDrLks4AZwAuNGaFK8rdhvmGPYMpm6s83JrlaBvQhQmUzJeDKZxlTBnSaq2VAk0Ud/QfQhvwp7xZZ0wAAAABJRU5ErkJggg==">
+        <p class="detailHeading">Free Delivery</p>
+        </div>
+        <p class="detailPara">We do not charge our precious customers for delivery all around India</p>
+    </div>
+</div>
+
+<p class="heading">Browse <headingLight>Collections</headingLight></p>
+
+<div class="collectionCarousel">
+    {% for collection in collections %}
+
+    <div class="collectionWrapper" style="background-color: {{collection.collection_color}};">
+        <p class="collectionTop">{{collection.collection_name}} <br> {{collection.collection_number}}</p>
+        <div class="collectionBottom">
+            <p class="collectionName">{{collection.collection_name}}{{collection.collection_number}}</p>
+            <a href="/collection/{{collection.collection_slug}}" class="viewProductBtn">Browse</a>
+        </div>
+    </div>
+    
+    {% endfor %}
+</div>
+
+{% if added_to_cart %}
+{% for product in products %}
+<div class="addedToBag" id="addedToBag">
+    <div class="messageTop">
+        <svg id="removeMessage" xmlns="http://www.w3.org/2000/svg" width="14.849" height="14.849" viewBox="0 0 14.849 14.849">
+            <g id="Group_28" data-name="Group 28" transform="translate(-1076.217 -3082.985) rotate(45)">
+              <line id="Line_10" data-name="Line 10" y2="17" transform="translate(2951.5 1410.5)" fill="none" stroke="darkgray" stroke-linecap="round" stroke-width="2"/>
+              <line id="Line_11" data-name="Line 11" y2="17" transform="translate(2960 1419) rotate(90)" fill="none" stroke="darkgray" stroke-linecap="round" stroke-width="2"/>
+            </g>
+          </svg>          
+    </div>
+    <div class="messageMiddle">
+        <p class="messageHeading">{{product.name}}</p>
+        <p class="messagePara">Added to bag.</p>
+    </div>
+    <div class="messageBottom">
+        <a href="/cart" class="viewBagBtn">Go To Bag</a>
+    </div>
+</div>
+{% endfor %}
+{% endif %}
+
+
+
+<script type="application/javascript">
+    document.getElementsByClassName('productPage')[0].style.height = window.innerHeight - document.getElementById('navbar').clientHeight + 'px';
+
+    {% for product in products %}
+    var img1 = "{{product.img1.url}}";
+    var img2 = "{{product.img2.url}}";
+    var img3 = "{{product.img3.url}}";
+    {% endfor %}
+
+    window.onload = function () {
+        document.getElementById('cardImg').style.backgroundImage = "url('" + img1 + "')";
+        document.getElementsByClassName('counterBlock')[0].style.opacity = '1';
+        document.getElementsByClassName('counterBlock')[1].style.opacity = '.5';
+        document.getElementsByClassName('counterBlock')[2].style.opacity = '.5';
+    };
+
+    var image = 0;
+
+    document.getElementById('imgHolder').addEventListener("click", function () {
+        if (image === 0) {
+            document.getElementById('cardImg').style.backgroundImage = "url('" + img2 + "')";
+            for (var i = 0; i < 2; i++) {
+                document.getElementsByClassName('counterBlock')[i].style.opacity = '1';
+            };
+            image += 1;
+        }
+        else if (image === 1) {
+            document.getElementById('cardImg').style.backgroundImage = "url('" + img3 + "')";
+            for (var i = 0; i < 3; i++) {
+                document.getElementsByClassName('counterBlock')[i].style.opacity = '1';
+            };
+            image += 1;
+        }
+        else if (image === 2) {
+            document.getElementById('cardImg').style.backgroundImage = "url('" + img1 + "')";
+            for (var i = 1; i < 3; i++) {
+                document.getElementsByClassName('counterBlock')[i].style.opacity = '.5';
+            };
+            image = 0;
+        }
+    });
+
+    document.getElementById('removeMessage').addEventListener('click', function() {
+        document.getElementById('addedToBag').style.opacity = '0';
+        document.getElementById('addedToBag').style.pointerEvents = 'none';
+    });
+
+</script>
+
+{% endblock body %}
