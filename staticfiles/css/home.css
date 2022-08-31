@@ -1,0 +1,133 @@
+:root {
+    display: block;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    background-image: url('../img/hero_img.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    padding: 2em 1em;
+    margin: 0em 0em 2em 0em;
+}
+
+.shopNowHead {
+    color: white;
+    font-size: 22px;
+}
+
+.shopNowPara {
+    color: lightgray;
+    font-size: 14px;
+}
+
+.shopNowBtn {
+    background-color: white;
+    color: black;
+    font-size: 14px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    margin: 10px 0px;
+}
+
+.heading {
+    font-size: 24px;
+    padding: 10px 10px;
+}
+
+headingLight {
+    color: gray;
+}
+
+.cardView {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 0em 0em 2em 0em;
+}
+
+.cardWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 60vh;
+    width: 100vw;
+}
+
+.cardBlur {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+    width: 100%;
+    padding: 20px 10px;
+    box-sizing: border-box;
+    color: white;
+}
+
+.cardPara, .price {
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05);
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.viewProductBtn {
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 12px;
+    min-width: max-content;
+}
+
+.collectionCarousel {
+    display: flex;
+    flex-direction: row;
+    overflow: scroll;
+}
+
+.collectionWrapper {
+    border-radius: 5px;
+    min-width: 80vw;
+    margin: 0px 10px;
+}
+
+.collectionTop {
+    font-family: 'PT Mono', monospace;
+    font-size: 80px;
+    opacity: .75;
+}
+
+.collectionBottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+    width: 100%;
+    padding: 20px 20px;
+    box-sizing: border-box;
+    color: white;
+    border-radius: 5px;
+}
+
+.collectionName {
+    color: white;
+}

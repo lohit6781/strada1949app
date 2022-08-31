@@ -1,0 +1,303 @@
+.productPage {
+    display: flex;
+    flex-direction: column;
+    height: min-content;
+}
+
+.productPageHeader {
+    height: min-content;
+    padding: 20px;
+}
+
+.productName {
+    font-size: 24px;
+    font-weight: 500;
+    color: darkgray;
+}
+
+.productDisplay {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.stylePick {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 30%;
+}
+
+.sizeSelectForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1em 0em;
+    overflow: scroll;
+}
+
+.sizeSelectBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 3em;
+    min-height: 3em;
+    max-width: 3em;
+    max-height: 3em;
+    margin: 1em;
+    padding: .5em;
+    font-size: 1em;
+    border-radius: 50%;
+    transition: 250ms ease;
+}
+
+input[type=radio] { 
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+input[type=radio] + .sizeSelectBtn {
+    cursor: pointer;
+    color: black;
+    background-color: #EEF0F4;
+}
+
+input[type=radio]:checked + .sizeSelectBtn {
+    padding: .5em;
+    color: white;
+    background-color: black;
+}
+
+.imgHolder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 70%;
+}
+
+.cardImg {
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.cardBlur {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+    width: 100%;
+    height: 20%;
+    padding: 20px 10px;
+    box-sizing: border-box;
+    color: white;
+    border-bottom-left-radius: 10px;
+}
+
+.counterBlock {
+    display: flex;
+    width: 100%;
+    height: 2px;
+    border-radius: 50px;
+    background-color: white;
+    margin: 2px;
+    opacity: .5;
+    transform: 500ms ease;
+}
+
+.btnClass {
+    display: flex;
+    margin: 1em 1em 1em 1em;
+}
+
+.btnClass form {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.likeBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #EEF0F4;
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+}
+
+.addToBagBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    border: none;
+    border-radius: 20px;
+}
+
+.productDescription {
+    padding: 0px 10px;
+    margin: 0em 0em 2em 0em;
+}
+
+.productDetailsWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.detailWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 10px 0px;
+}
+
+.detailHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    border-bottom: 1px solid black;
+}
+
+.detailImg {
+    width: 20px;
+}
+
+.detailHeading {
+    font-size: 14px;
+    margin: 0px 0px 0px 5px;
+}
+
+.detailPara {
+    font-size: 12px;
+}
+
+.heading {
+    font-size: 24px;
+    padding: 10px 10px;
+}
+
+headingLight {
+    color: gray;
+}
+
+.viewProductBtn {
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 12px;
+}
+
+.collectionCarousel {
+    display: flex;
+    flex-direction: row;
+    overflow: scroll;
+}
+
+.collectionWrapper {
+    border-radius: 5px;
+    min-width: 80vw;
+    margin: 0px 10px;
+}
+
+.collectionTop {
+    font-family: 'PT Mono', monospace;
+    font-size: 80px;
+    opacity: .75;
+}
+
+.collectionBottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+    width: 100%;
+    padding: 20px 20px;
+    box-sizing: border-box;
+    color: white;
+    border-radius: 5px;
+}
+
+.collectionName {
+    color: white;
+}
+
+.addedToBag {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    position: fixed;
+    bottom: 15px;
+    left: 5%;
+    background-color: white;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+    border: 1px solid lightgray;
+    padding: 15px;
+    box-sizing: border-box;
+    opacity: 1;
+    pointer-events: all;
+    transition: 500ms ease;
+}
+
+.messageTop {
+    display: flex;
+    align-self: flex-end;
+}
+
+.messageMiddle {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    margin: 5px 0px 0px 0px;
+}
+
+.messageHeading {
+    font-size: 20px;
+    font-weight: 600;
+    width: 80%;
+}
+
+.messagePara {
+    font-size: 12px;
+}
+
+.messageBottom {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.viewBagBtn {
+    color: white;
+    background-color: black;
+    font-size: 14px;
+    border-radius: 20px;
+    padding: 10px 20px;
+}
